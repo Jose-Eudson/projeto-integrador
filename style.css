@@ -1,0 +1,38 @@
+* { box-sizing: border-box; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+body { background: #fff; color: #222; margin: 0; padding: 24px; }
+h1 { text-align: center; margin: 8px 0 24px; }
+
+.form {
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+  max-width: 980px; margin: 0 auto 24px;
+}
+.form input { padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; min-width: 180px; }
+.form button {
+  padding: 10px 14px; border: 1px solid #333; background: #fff; border-radius: 8px; cursor: pointer;
+}
+.form button:hover { background: #f4f4f4; }
+
+.lista { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+
+.aluno-card {
+  background: #faf7f3;
+  border: 1px solid #e6dfd6;
+  border-radius: 12px;
+  padding: 14px;
+}
+.aluno-title { font-weight: 600; margin-bottom: 10px; }
+
+.treino-row {
+  display: flex; justify-content: space-between; align-items: center;
+  border: 1px solid #eee; background: #fff; border-radius: 10px;
+  padding: 10px 12px; margin-top: 8px;
+}
+.treino-row.concluido span { text-decoration: line-through; opacity: .6; }
+
+.acoes { display: flex; gap: 8px; }
+.btn {
+  padding: 8px 10px; border: 1px solid #c9c9c9; background: #fff; border-radius: 8px; cursor: pointer;
+}
+.btn:hover { background: #f3f3f3; }
+.btn.danger { border-color: #c63d3d; }
+.btn.danger:hover { background: #ffe9e9; }

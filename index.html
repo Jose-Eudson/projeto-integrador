@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestão de Academia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Gestão de Academia</h1>
+
+  <div class="form">
+    <input id="nome" type="text" placeholder="Nome do aluno" />
+    <input id="exercicio" type="text" placeholder="Exercício (ex: supino)" />
+    <input id="series" type="number" min="1" placeholder="Séries" />
+    <input id="reps" type="number" min="1" placeholder="Repetições" />
+    <button id="btnAdd" type="button">Adicionar Treino</button>
+  </div>
+
+  <div id="listaTreinos" class="lista"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
