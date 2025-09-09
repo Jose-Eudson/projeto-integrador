@@ -1,15 +1,15 @@
 let treinos = [];
 let nextId = 1;
 
-const $ = (id) => document.getElementById(id);
+const getById = (id) => document.getElementById(id);
 
-$("btnAdd").addEventListener("click", adicionarTreino);
+getById("btnAdd").addEventListener("click", adicionarTreino);
 
 function adicionarTreino() {
-  const nome = $("nome").value.trim();
-  const exercicio = $("exercicio").value.trim();
-  const series = $("series").value.trim();
-  const repeticoes = $("reps").value.trim();
+  const nome = getById("nome").value.trim();
+  const exercicio = getById("exercicio").value.trim();
+  const series = getById("series").value.trim();
+  const repeticoes = getById("reps").value.trim();
 
   if (!nome || !exercicio || !series || !repeticoes) {
     alert("Preencha todos os campos.");
@@ -30,19 +30,19 @@ function adicionarTreino() {
 }
 
 function limparCampos() {
-  $("exercicio").value = "";
-  $("series").value = "";
-  $("reps").value = "";
-  $("exercicio").focus();
+  getById("exercicio").value = "";
+  getById("series").value = "";
+  getById("reps").value = "";
+  getById("exercicio").focus();
 }
 
 function render() {
-  const container = $("listaTreinos");
+  const container = getById("listaTreinos");
   container.innerHTML = "";
 
-  const grupos = treinos.reduce((acc, t) => {
-    (acc[t.nome] = acc[t.nome] || []).push(t);
-    return acc;
+  const grupos = treinos.reduce((listaTreinosPassados, treinos) => {
+    (listaTreinosPassados[treinos.nome] = listaTreinosPassados[treinos.nome] || []).push(treinos);
+    return listaTreinosPassados;
   }, {});
 
   Object.keys(grupos).forEach((nome) => {
@@ -54,21 +54,21 @@ function render() {
     title.textContent = `Aluno: ${nome}`;
     card.appendChild(title);
 
-    grupos[nome].forEach((t) => {
+    grupos[nome].forEach((treinos) => {
       const row = document.createElement("div");
-      row.className = "treino-row" + (t.concluido ? " concluido" : "");
+      row.className = "treino-row" + (treinos.concluido ? " concluido" : "");
 
       const info = document.createElement("span");
-      info.textContent = `${t.exercicio} - ${t.series}x${t.repeticoes}`;
+      info.textContent = `${treinos.exercicio} - ${treinos.series}x${treinos.repeticoes}`;
 
       const acoes = document.createElement("div");
       acoes.className = "acoes";
 
       const btnConcluir = document.createElement("button");
       btnConcluir.className = "btn";
-      btnConcluir.textContent = t.concluido ? "Reabrir" : "Concluir";
+      btnConcluir.textContent = treinos.concluido ? "Reabrir" : "Concluir";
       btnConcluir.onclick = () => {
-        t.concluido = !t.concluido;
+        treinos.concluido = !treinos.concluido;
         render();
       };
 
@@ -76,7 +76,7 @@ function render() {
       btnRemover.className = "btn danger";
       btnRemover.textContent = "Remover";
       btnRemover.onclick = () => {
-        treinos = treinos.filter((x) => x.id !== t.id);
+        treinos = treinos.filter((listaTreinoAtual) => listaTreinoAtual.id !== treinos.id);
         render();
       };
 
