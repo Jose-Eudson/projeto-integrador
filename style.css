@@ -1,38 +1,122 @@
-* { box-sizing: border-box; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; }
-body { background: #fff; color: #222; margin: 0; padding: 24px; }
-h1 { text-align: center; margin: 8px 0 24px; }
+* { box-sizing: border-box #000000;
+   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+   
+  }
+
+
+body {background-image: url(162958321-gym-training-gear-royalty-free.jpg) ;
+      background-position: center;
+      background-size: cover;
+      background-attachment:fixed ;
+      background-repeat:no-repeat ;
+      color: #ae9696; 
+      margin: 0; 
+      padding: 24px; 
+      justify-content: center;
+      border: #000000;
+    }
+
+h1 { 
+   text-align: center;
+   margin: 8px 0 24px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   color: #c2c2c2ea;
+   }
 
 .form {
-  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
-  max-width: 980px; margin: 0 auto 24px;
-}
-.form input { padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; min-width: 180px; }
-.form button {
-  padding: 10px 14px; border: 1px solid #333; background: #fff; border-radius: 8px; cursor: pointer;
-}
-.form button:hover { background: #f4f4f4; }
+  display: flex;
+  gap: 8px; 
+  justify-content: center; 
+  flex-wrap: wrap;
+  max-width: 980px; 
+  margin: 0 auto 24px;
 
-.lista { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+}
+.form input {
+   
+   padding: 10px 12px; 
+   border: 1px solid #00000080;
+   border-radius: 10px;
+   min-width: 200px;
+   background-color: #98989826;
+   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   color: #f0e4e4b5;
+  
+  }
+
+.form button {
+     padding: 10px 14px;
+     border: 1px solid #000000;
+     background:#f6f8f8 ; border-radius: 8px;
+     cursor: pointer;
+     background-color: #98989826;
+     color: #dad3d3c0;
+}
+.form button:hover { 
+   background: #ffffff48;
+
+
+}
+
+.lista { 
+   max-width: 50%;
+   margin: 0 auto;
+   display: grid;
+   gap: 16px;
+   border: 2px #000000;
+   border-radius: 12pxs #807f7f;
+   }
+   
 
 .aluno-card {
-  background: #faf7f3;
-  border: 1px solid #e6dfd6;
+  color: #ffffffd0;
+  background: #989898ba;
+  border:2px #000000;
   border-radius: 12px;
-  padding: 14px;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  background-color:#98989826;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.aluno-title { font-weight: 600; margin-bottom: 10px; }
+
+.aluno-title { 
+   font-weight: 600;
+   margin-bottom: 10px;
+   color: #bcb9b9d6;
+  }
 
 .treino-row {
-  display: flex; justify-content: space-between; align-items: center;
-  border: 1px solid #eee; background: #fff; border-radius: 10px;
-  padding: 10px 12px; margin-top: 8px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  border: 1px solid rgb(0, 0, 0); 
+  background: #98989826; 
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  background-color: rgba(186, 191, 195, 0);
 }
-.treino-row.concluido span { text-decoration: line-through; opacity: .6; }
+
+.treino-row.concluido span { 
+
+  text-decoration: line-through; 
+  opacity: .6;
+
+ }
 
 .acoes { display: flex; gap: 8px; }
+
 .btn {
-  padding: 8px 10px; border: 1px solid #c9c9c9; background: #fff; border-radius: 8px; cursor: pointer;
+  padding: 8px 10px; 
+  border: 1px solid #000000; 
+  background: #98989826;
+  border-radius: 8px; 
+  cursor: pointer;
+  color: #ffffffe5;
 }
-.btn:hover { background: #f3f3f3; }
-.btn.danger { border-color: #c63d3d; }
-.btn.danger:hover { background: #ffe9e9; }
+.btn:hover { background: #9fdf7191; }
+.btn.danger { border-color: #0000009a; }
+.btn.danger:hover { background: #da65659a; }
+
