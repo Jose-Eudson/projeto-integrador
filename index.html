@@ -17,8 +17,22 @@
     <button id="btnAdd" type="button">Adicionar Treino</button>
   </div>
 
+  <form class="form filtroAluno">
+    <input id="filterAluno" type="text" placeholder="Busque por Aluno">
+    <input id="filterExercicio" type="text" placeholder="Busque por Exercício">
+    <select name="pagamentoStatus" id="pagamentoStatus">
+      <option value="" disabled selected>Status de Pagamento</option>
+      <option value="statusMensal">Mensal</option>
+      <option value="statusTrimestral">trimestral</option>
+      <option value="statusSemestral">semestral</option>
+      <option value="statusAnual">anual</option>
+    </select>
+    <button onclick="filtrarAluno()">Pesquisar</button>
+  </form>
+
   <div id="listaTreinos" class="lista"></div>
 
   <script src="script.js"></script>
+  <script src="filter.js"></script>
 </body>
 </html>
