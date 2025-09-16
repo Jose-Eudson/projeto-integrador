@@ -7,6 +7,8 @@ getById("btnAdd").addEventListener("click", adicionarTreino);
 
 function adicionarTreino() {
   const nome = getById("nome").value.trim();
+  const mensalidade = getById("mensalidade").value;
+  const data = getById("data").value;
   const exercicio = getById("exercicio").value.trim();
   const series = getById("series").value.trim();
   const repeticoes = getById("reps").value.trim();
@@ -19,6 +21,7 @@ function adicionarTreino() {
   treinos.push({
     id: nextId++,
     nome,
+    mensalidade,
     exercicio,
     series,
     repeticoes,
