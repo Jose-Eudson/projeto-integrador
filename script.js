@@ -3,6 +3,35 @@ let nextId = 1;
 
 const getById = (id) => document.getElementById(id);
 
+const exerciciosJSON = {
+  "exercicios": [
+    "Supino Reto",
+    "Triceps Corda",
+    "PullDown",
+    "Esteira",
+    "Bicicleta",
+    "Agachamento Livre",
+    "Leg Press",
+    "Puxada Frente na Barra Guiada",
+    "Rosca Direta com Barra",
+    "Rosca Alternada com Halteres",
+    "Elevação Lateral",
+    "Remada Curvada",
+    "Stiff",
+    "Abdutor na Máquina",
+    "Prancha Abdominal"
+  ]
+};
+
+function popularListaExercicios() {
+  const datalist = getById("listaExercicios");
+  exerciciosJSON.exercicios.forEach(exercicio => {
+    const option = document.createElement("option");
+    option.value = exercicio;
+    datalist.appendChild(option);
+  });
+}
+
 getById("btnAdd").addEventListener("click", adicionarTreino);
 
 function adicionarTreino() {
@@ -87,4 +116,23 @@ function render() {
 
     container.appendChild(card);
   });
+
+  renderRelatorio();
 }
+
+function renderRelatorio() {
+  const tabelaRelatorio = getById("tabelaRelatorio");
+  tabelaRelatorio.innerHTML = "";
+  
+  const alunosUnicos = [...new Set(treinos.map(treino => treino.nome))];
+  const totalAlunos = alunosUnicos.length;
+  
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td>Mensal</td>
+    <td>${totalAlunos}</td>
+  `;
+  tabelaRelatorio.appendChild(row);
+}
+
+document.addEventListener("DOMContentLoaded", popularListaExercicios);

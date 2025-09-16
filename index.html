@@ -11,13 +11,28 @@
 
   <div class="form">
     <input id="nome" type="text" placeholder="Nome do aluno" />
-    <input id="exercicio" type="text" placeholder="Exercício (ex: supino)" />
+    <input id="exercicio" type="text" placeholder="Exercício (ex: supino)" list="listaExercicios" />
+    <datalist id="listaExercicios"></datalist>
     <input id="series" type="number" min="1" placeholder="Séries" />
     <input id="reps" type="number" min="1" placeholder="Repetições" />
     <button id="btnAdd" type="button">Adicionar Treino</button>
   </div>
 
   <div id="listaTreinos" class="lista"></div>
+
+  <div class="relatorio">
+    <h2>Relatório de Alunos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Plano</th>
+                <th>Total de Alunos</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaRelatorio">
+            </tbody>
+    </table>
+  </div>
 
   <script src="script.js"></script>
 </body>
