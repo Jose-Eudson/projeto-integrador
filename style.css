@@ -1,23 +1,22 @@
-* {
-   box-sizing: border-box #000000;
+* { box-sizing: border-box #000000;
    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-
+   
   }
 
- /*Fundo-back*/
+
 body {
-   background-image: url(162958321-gym-training-gear-royalty-free.jpg) ;
-   background-position: center;
-   background-size: cover;
-   background-attachment:fixed ;
-   background-repeat:no-repeat ;
-   color: #ae9696; 
-   margin: 0; 
-   padding: 24px; 
-   justify-content: center;
-   border: #000000;
-    }
- /*Gestao de Academia*/
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/162958321-gym-training-gear-royalty-free.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #545050;
+  margin: 0;
+  padding: 24px;
+  justify-content: center;
+  border: 1px solid #000000ff;
+}
+
 h1 { 
    text-align: center;
    margin: 8px 0 24px;
@@ -34,9 +33,7 @@ h1 {
   margin: 0 auto 24px;
 
 }
- /*inputs*/
-.form input {
-   
+.form input, select {
    padding: 10px 12px; 
    border: 1px solid #00000080;
    border-radius: 10px;
@@ -46,7 +43,17 @@ h1 {
    color: #f0e4e4b5;
   
   }
-/*botao de adicionar*/
+
+option{
+  padding: 10px 12px; 
+  border: 1px solid #00000080;
+  border-radius: 10px;
+}
+
+select{
+  border: 0;
+}
+
 .form button {
      padding: 10px 14px;
      border: 1px solid #000000;
@@ -57,6 +64,8 @@ h1 {
 }
 .form button:hover { 
    background: #ffffff48;
+
+
 }
 
 .lista { 
@@ -82,7 +91,7 @@ h1 {
   background-color:#98989826;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-/*titulo nome do aluno*/
+
 .aluno-title { 
    font-weight: 600;
    margin-bottom: 10px;
@@ -108,11 +117,8 @@ h1 {
 
  }
 
-.acoes { 
-   display: flex;
-   gap: 8px;
-  }
-/*ambos botoes*/
+.acoes { display: flex; gap: 8px; }
+
 .btn {
   padding: 8px 10px; 
   border: 1px solid #000000; 
@@ -121,16 +127,43 @@ h1 {
   cursor: pointer;
   color: #ffffffe5;
 }
+.btn:hover { background: #9fdf7191; }
+.btn.danger { border-color: #0000009a; }
+.btn.danger:hover { background: #da65659a; }
 
-/*botao de concluir*/
-.btn:hover { 
-  background: #9fdf7191;
- }
- /*botao de delete*/
-.btn.danger { 
-  border-color: #0000009a;
- }
-.btn.danger:hover { 
-  background: #da65659a;
- }
+.relatorio {
+    max-width: 50%;
+    margin: 25px auto;
+    color: #ffffffa8 ;
+}
 
+.relatorio h2 {
+    text-align: center;
+    color: #c2c2c2ea;
+    margin-bottom: 16px;
+}
+
+.relatorio table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(152, 152, 152, 0.15); 
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+    
+}
+
+.relatorio td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
+    background-color: rgba(0, 0, 0, 0.1); 
+    color: #bcb9b9d6;
+
+}
+.relatorio th {
+    background-color: rgba(52, 50, 50, 0.5);
+    color: #c2c2c2ea;
+    text-align: center;
+    margin: 24px;
+}

@@ -5,21 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gestão de Academia</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./assets/dumbbell.png">
 </head>
 <body>
   <h1>🏋️‍♂️Gestão de Academia</h1>
 
   <div class="form">
     <input id="nome" type="text" placeholder="Nome do aluno" />
-    <input id="exercicio" type="text" placeholder="Exercício (ex: supino)" />
+    <select id="mensalidade">
+      <option value="mensal">Mensal</option>
+      <option value="trimestral">Trimestral</option>
+      <option value="semestral">Semestral</option>
+      <option value="anual">Anual</option>
+    </select>
+
+    <input id="data" type="date">
+
+    <input id="exercicio" type="text" placeholder="Exercício (ex: supino)" list="listaExercicios" />
+    <datalist id="listaExercicios"></datalist>
+
+
     <input id="series" type="number" min="1" placeholder="Séries" />
     <input id="reps" type="number" min="1" placeholder="Repetições" />
     <button id="btnAdd" type="button">Adicionar Treino</button>
   </div>
 
+<div class="form">
+    <input id="filtroNome" type="text" placeholder="Nome do aluno" />
+    <select id="filtroMensalidade">
+        <option value="">Selecione a mensalidade</option>
+        <option value="mensal">Mensal</option>
+        <option value="trisal">Trimestral</option>
+        <option value="semestral">Semestral</option>
+        <option value="anual">Anual</option>
+    </select>
+    <button id="filtrar">Filtrar</button>
+</div>
+
+<div class="relatorio">
+    <h2>Relatório de Alunos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Plano</th>
+                <th>Total de Alunos</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaRelatorio">
+            
+        </tbody>
+    </table>
+</div>
+
   <div id="listaTreinos" class="lista"></div>
 
   <script src="script.js"></script>
+  <script src="filter.js"></script>
 </body>
 </html>
 3
