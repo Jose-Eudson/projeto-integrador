@@ -36,6 +36,8 @@ getById("btnAdd").addEventListener("click", adicionarTreino);
 
 function adicionarTreino() {
   const nome = getById("nome").value.trim();
+  const mensalidade = getById("mensalidade").value;
+  const data = getById("data").value;
   const exercicio = getById("exercicio").value.trim();
   const series = getById("series").value.trim();
   const repeticoes = getById("reps").value.trim();
@@ -48,6 +50,8 @@ function adicionarTreino() {
   treinos.push({
     id: nextId++,
     nome,
+    mensalidade,
+    data,
     exercicio,
     series,
     repeticoes,
@@ -69,8 +73,8 @@ function render() {
   const container = getById("listaTreinos");
   container.innerHTML = "";
 
-  const grupos = treinos.reduce((listaTreinosPassados, treinos) => {
-    (listaTreinosPassados[treinos.nome] = listaTreinosPassados[treinos.nome] || []).push(treinos);
+  const grupos = treinos.reduce((listaTreinosPassados, treino) => {
+    (listaTreinosPassados[treino.nome] = listaTreinosPassados[treino.nome] || []).push(treino);
     return listaTreinosPassados;
   }, {});
 
@@ -83,21 +87,21 @@ function render() {
     title.textContent = `Aluno: ${nome}`;
     card.appendChild(title);
 
-    grupos[nome].forEach((treinos) => {
+    grupos[nome].forEach((treino) => {
       const row = document.createElement("div");
-      row.className = "treino-row" + (treinos.concluido ? " concluido" : "");
+      row.className = "treino-row" + (treino.concluido ? " concluido" : "");
 
       const info = document.createElement("span");
-      info.textContent = `${treinos.exercicio} - ${treinos.series}x${treinos.repeticoes}`;
+      info.textContent = `${treino.exercicio} - ${treino.series}x${treino.repeticoes}`;
 
       const acoes = document.createElement("div");
       acoes.className = "acoes";
 
       const btnConcluir = document.createElement("button");
       btnConcluir.className = "btn";
-      btnConcluir.textContent = treinos.concluido ? "Reabrir" : "Concluir";
+      btnConcluir.textContent = treino.concluido ? "Reabrir" : "Concluir";
       btnConcluir.onclick = () => {
-        treinos.concluido = !treinos.concluido;
+        treino.concluido = !treino.concluido;
         render();
       };
 
@@ -105,7 +109,7 @@ function render() {
       btnRemover.className = "btn danger";
       btnRemover.textContent = "Remover";
       btnRemover.onclick = () => {
-        treinos = treinos.filter((listaTreinoAtual) => listaTreinoAtual.id !== treinos.id);
+        treinos = treinos.filter((listaTreinoAtual) => listaTreinoAtual.id !== treino.id);
         render();
       };
 
@@ -123,16 +127,23 @@ function render() {
 function renderRelatorio() {
   const tabelaRelatorio = getById("tabelaRelatorio");
   tabelaRelatorio.innerHTML = "";
-  
-  const alunosUnicos = [...new Set(treinos.map(treino => treino.nome))];
-  const totalAlunos = alunosUnicos.length;
-  
-  const row = document.createElement("tr");
-  row.innerHTML = `
-    <td>Mensal</td>
-    <td>${totalAlunos}</td>
-  `;
-  tabelaRelatorio.appendChild(row);
+
+  const planos = treinos.reduce((acc, treino) => {
+    if (!acc[treino.mensalidade]) {
+      acc[treino.mensalidade] = new Set();
+    }
+    acc[treino.mensalidade].add(treino.nome);
+    return acc;
+  }, {});
+
+  Object.keys(planos).forEach((plano) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${plano}</td>
+      <td>${planos[plano].size}</td>
+    `;
+    tabelaRelatorio.appendChild(row);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", popularListaExercicios);

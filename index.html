@@ -5,14 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gestão de Academia</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="dumbbell.png">
 </head>
 <body>
   <h1>🏋️‍♂️Gestão de Academia</h1>
 
   <div class="form">
     <input id="nome" type="text" placeholder="Nome do aluno" />
+
+    <select id="mensalidade">
+      <option value="mensal">Mensal</option>
+      <option value="trimestral">Trimestral</option>
+      <option value="semestral">Semestral</option>
+      <option value="anual">Anual</option>
+    </select>
+
+    <input id="data" type="date">
+
     <input id="exercicio" type="text" placeholder="Exercício (ex: supino)" list="listaExercicios" />
     <datalist id="listaExercicios"></datalist>
+
     <input id="series" type="number" min="1" placeholder="Séries" />
     <input id="reps" type="number" min="1" placeholder="Repetições" />
     <button id="btnAdd" type="button">Adicionar Treino</button>
@@ -30,7 +42,7 @@
             </tr>
         </thead>
         <tbody id="tabelaRelatorio">
-            </tbody>
+        </tbody>
     </table>
   </div>
 
