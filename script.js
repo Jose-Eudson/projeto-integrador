@@ -22,6 +22,7 @@ function adicionarTreino() {
     id: nextId++,
     nome,
     mensalidade,
+    data,
     exercicio,
     series,
     repeticoes,
