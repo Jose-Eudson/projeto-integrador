@@ -130,3 +130,33 @@ select{
 .btn.danger { border-color: #0000009a; }
 .btn.danger:hover { background: #da65659a; }
 
+.relatorio {
+    max-width: 50%;
+    margin: 24px auto;
+    color: #ffffffd0;
+}
+
+.relatorio h2 {
+    text-align: center;
+    color: #c2c2c2ea;
+    margin-bottom: 16px;
+}
+
+.relatorio table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #98989826;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.relatorio th, .relatorio td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #00000080;
+}
+
+.relatorio th {
+    background-color: #989898ba;
+    color: #bcb9b9d6;
+}

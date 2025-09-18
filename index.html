@@ -18,7 +18,7 @@
       <option value="semestral">Semestral</option>
       <option value="anual">Anual</option>
     </select>
-    <input type="date">
+    <input type="date" id="data">
 
     <input id="exercicio" type="text" placeholder="Exercício (ex: supino)" />
     <input id="series" type="number" min="1" placeholder="Séries" />
@@ -26,18 +26,32 @@
     <button id="btnAdd" type="button">Adicionar Treino</button>
   </div>
 
-  <form class="form filtroAluno">
-    <input id="filterAluno" type="text" placeholder="Busque por Aluno">
-    <input id="filterExercicio" type="text" placeholder="Busque por Exercício">
-    <select name="pagamentoStatus" id="pagamentoStatus">
-      <option value="" disabled selected>Status de Pagamento</option>
-      <option value="statusMensal">Mensal</option>
-      <option value="statusTrimestral">trimestral</option>
-      <option value="statusSemestral">semestral</option>
-      <option value="statusAnual">anual</option>
+<div class="form">
+    <input id="filtroNome" type="text" placeholder="Nome do aluno" />
+    <select id="filtroMensalidade">
+        <option value="">Selecione a mensalidade</option>
+        <option value="mensal">Mensal</option>
+        <option value="trisal">Trimestral</option>
+        <option value="semestral">Semestral</option>
+        <option value="anual">Anual</option>
     </select>
-    <button onclick="filtrarAluno()">Pesquisar</button>
-  </form>
+    <button id="filtrar">Filtrar</button>
+</div>
+
+<div class="relatorio">
+    <h2>Relatório de Alunos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Plano</th>
+                <th>Total de Alunos</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaRelatorio">
+            
+        </tbody>
+    </table>
+</div>
 
   <div id="listaTreinos" class="lista"></div>
 
