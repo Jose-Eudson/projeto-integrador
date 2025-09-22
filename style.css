@@ -44,10 +44,12 @@ h1 {
   
   }
 
-option{
+option {
   padding: 10px 12px; 
   border: 1px solid #00000080;
   border-radius: 10px;
+  color: #000000;
+  background-color: #FFFFFF;
 }
 
 select{
